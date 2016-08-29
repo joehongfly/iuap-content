@@ -352,7 +352,7 @@ iuap平台组件和示例工程均采用Maven来构建、管理，推荐使用Ma
 ## JAVA编程规范
 
 建议遵循 Google Java 编程风格，详细规则请参考以下链接：
-[http://www.hawstein.com/posts/google-java-style.html]()
+[http://www.hawstein.com/posts/google-java-style.html](http://www.hawstein.com/posts/google-java-style.html)
 
 ## 前端编程规范
 

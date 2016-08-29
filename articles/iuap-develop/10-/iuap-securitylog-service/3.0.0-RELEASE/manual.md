@@ -33,23 +33,23 @@ ${iuap.modules.version} 为平台在maven私服上发布的组件的version。
 ## 技术方案 ##
 根据需求，提供了两种方式来满足安全日志系统的使用方式：同步调用、异步调用。根据客户的需求，选择相应的实现方式。
 
-### 1，同步调用 ###
+### 同步调用 ###
 
 同步调用时业务系统需要集成iuap-securitylog-local-sdk，日志服务可和业务应用一起部署，也可以分开独立部署，会以war包的形式提供出来。
 
-### 2，异步调用 ###
+### 异步调用 ###
 
 异步调用时业务系统需要集成iuap-securitylog-rest-sdk，日志服务与业务应用分开部署，为了保证日志不会丢失，能够准确记录，我们采用分布式的MQ来做中转，用户每一次记录日志都会把日志发送到MQ服务器，在日志服务端，会有一个定时任务去获取日志，然后存储到数据库中。
 
 
 # 使用说明 #
 
-## 服务端部署说明 ## 
+## 服务端部署说明 ##
 
 服务端部署，部署一个war包
 
 ## 组件配置 ##
-1. 数据库信息配置（securitylog-application.properties）：
+** 1. 数据库信息配置（securitylog-application.properties）：**
 
 下面几项必须配置 
 ```
@@ -64,14 +64,14 @@ ${iuap.modules.version} 为平台在maven私服上发布的组件的version。
     maxPoolSize=5
 ```
 
-2. 配置文件参考：参考war包中的springDispatcherServlet-servlet.xml和securitylog-applicationContext.xml
+** 2. 配置文件参考：参考war包中的springDispatcherServlet-servlet.xml和securitylog-applicationContext.xml **
 
 参考war包中的springDispatcherServlet-servlet.xml和securitylog-applicationContext.xml
 
 
-3. 对于异步调用的方式，需要的配置文件。
+** 3. 对于异步调用的方式，需要的配置文件。**
 
-（1）配置文件参考war包中的springDispatcherServlet-servlet.xml和securitylog-applicationContext.xml和securitylog-applicationContext-mq-consumer.xml 
+配置文件参考war包中的springDispatcherServlet-servlet.xml和securitylog-applicationContext.xml和securitylog-applicationContext-mq-consumer.xml 
 
 MQ服务器配置securitylogMQConfig.properties，需要放在classpath目录下：
 ```
@@ -83,4 +83,6 @@ MQ服务器配置securitylogMQConfig.properties，需要放在classpath目录下
     mq.password=admin
 ```
 
-4. 建库脚本参考iuap-securitylog-server包下的resources下的mysql
+** 4. 执行数据库脚本 **
+
+依次执行examples项目下sql目录中的dll.sql、index.sql、dml.sql建立数据库并初始化数据。

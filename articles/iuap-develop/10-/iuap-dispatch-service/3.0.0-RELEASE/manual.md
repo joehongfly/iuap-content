@@ -57,14 +57,16 @@ iuap-dispatch-service组件功能包括添加、删除、暂停、重启任务�
 dispatch_dbinfo.properties如下：
 ```
     jdbc.driverClassName=com.mysql.jdbc.Driver
-	jdbc.url=jdbc:mysql://IP:PORT/DATABASE?useUnicode=true&characterEncoding=utf-8
+	jdbc.url=jdbc:my`://IP:PORT/DATABASE?useUnicode=true&characterEncoding=utf-8
 	jdbc.username=用户名
 	jdbc.password=密码
 ```
 
 **2:执行数据库脚本，预置数据库表信息**
 
-执行dispatch.sql 和tables_mysql.sql 初始化数据库的脚本。
+
+依次执行examples项目下sql目录中的dll.sql、index.sql、dml.sql建立数据库并初始化数据。
+
 预置数据库表dispatch_taskway的信息，这张表是用户要执行任务的清单，需要用户预置进去，其中url是指你要执行的定时任务，通过HTTP的方式访问。
  
 

@@ -55,103 +55,10 @@ ${iuap.modules.version} 为平台在maven私服上发布的组件的version。
 
 可参见具体的示例工程：
 
+
 ### 执行数据库脚本 ###
 
-（for mysql）
-
-	
-    SET FOREIGN_KEY_CHECKS=0;
-
-    -- ----------------------------
-    -- Table structure for `pub_bcr_elem`
-    -- ----------------------------
-    DROP TABLE IF EXISTS `pub_bcr_elem`;
-    CREATE TABLE `pub_bcr_elem` (
-      `pk_billcodeelem` varchar(40) NOT NULL,
-      `pk_billcodebase` varchar(40) NOT NULL,
-      `elemtype` smallint(6) DEFAULT NULL,
-      `elemvalue` varchar(100) DEFAULT NULL,
-      `elemlenth` smallint(6) DEFAULT NULL,
-      `isrefer` smallint(6) DEFAULT NULL,
-      `eorder` smallint(6) DEFAULT NULL,
-      `fillstyle` smallint(6) DEFAULT NULL,
-      `datedisplayformat` varchar(16) DEFAULT NULL,
-      `fillsign` varchar(4) DEFAULT NULL,
-      `createdate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-      PRIMARY KEY (`pk_billcodeelem`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-    -- ----------------------------
-    -- Table structure for `pub_bcr_precode`
-    -- ----------------------------
-    DROP TABLE IF EXISTS `pub_bcr_precode`;
-    CREATE TABLE `pub_bcr_precode` (
-      `pk_precode` varchar(40) NOT NULL,
-      `pk_rulebase` varchar(40) NOT NULL,
-      `markstr` varchar(100) DEFAULT NULL,
-      `billcode` varchar(100) DEFAULT NULL,
-      `lastsn` varchar(10) DEFAULT NULL,
-      `markstrdesc` varchar(100) DEFAULT NULL,
-      PRIMARY KEY (`pk_precode`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-    -- ----------------------------
-    -- Records of pub_bcr_precode
-    -- ----------------------------
-
-    -- ----------------------------
-    -- Table structure for `pub_bcr_return`
-    -- ----------------------------
-    DROP TABLE IF EXISTS `pub_bcr_return`;
-    CREATE TABLE `pub_bcr_return` (
-      `pk_billcodertn` varchar(40) NOT NULL,
-      `pk_billcodebase` varchar(40) NOT NULL,
-      `markstr` varchar(100) DEFAULT NULL,
-      `rtnsn` varchar(10) DEFAULT NULL,
-      `markstrdesc` varchar(100) DEFAULT NULL,
-      PRIMARY KEY (`pk_billcodertn`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-    -- ----------------------------
-    -- Records of pub_bcr_return
-    -- ----------------------------
-
-    -- ----------------------------
-    -- Table structure for `pub_bcr_rulebase`
-    -- ----------------------------
-    DROP TABLE IF EXISTS `pub_bcr_rulebase`;
-    CREATE TABLE `pub_bcr_rulebase` (
-      `pk_billcodebase` varchar(40) NOT NULL,
-      `rulecode` varchar(100) DEFAULT NULL,
-      `rulename` varchar(300) DEFAULT NULL,
-      `codemode` varchar(10) DEFAULT NULL,
-      `iseditable` char(1) DEFAULT NULL,
-      `isautofill` char(1) DEFAULT NULL,
-      `format` varchar(20) DEFAULT NULL,
-      `isdefault` char(1) DEFAULT NULL,
-      `isused` char(1) DEFAULT NULL,
-      `islenvar` char(1) DEFAULT NULL,
-      `isgetpk` char(1) DEFAULT NULL,
-      `renterid` varchar(40) DEFAULT NULL,
-      `sysid` varchar(40) DEFAULT NULL,
-      `createdate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-      PRIMARY KEY (`pk_billcodebase`),
-      UNIQUE KEY `rulecode` (`rulecode`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-    -- ----------------------------
-    -- Table structure for `pub_bcr_sn`
-    -- ----------------------------
-    DROP TABLE IF EXISTS `pub_bcr_sn`;
-    CREATE TABLE `pub_bcr_sn` (
-      `pk_billcodesn` varchar(40) NOT NULL,
-      `pk_billcodebase` varchar(40) NOT NULL,
-      `markstr` varchar(100) DEFAULT NULL,
-      `lastsn` varchar(10) DEFAULT NULL,
-      `markstrdesc` varchar(100) DEFAULT NULL,
-      PRIMARY KEY (`pk_billcodesn`),
-      KEY `idx_pub_bcr_sn` (`pk_billcodebase`,`markstr`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+依次执行examples项目下sql目录中的dll.sql、index.sql、dml.sql建立数据库并初始化数据。
 
 
 ### spring集成 ###

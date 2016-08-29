@@ -1,16 +1,16 @@
 # 前端教程
 
-有没有想过在实际开发中，不会因为用户的操作而进行页面的重新加载或跳转，取而代之的是动态的变换HTML的内容，避免页面的重新加载，这种用户体验是不是很好。所以开发平台前端开发中，默认采用了AMD模块化规范的单页面应用(SPA)。在页面中，采用了iUAP Design的[UI控件库](http://design.yyuap.com/dist/pages/neoui/index.html)以及[模型框架库](http://design.yyuap.com/dist/pages/kero/overview.html)分别来做UI层开发和数型层(MVVM)开发。
+有没有想过在实际开发中，不会因为用户的操作而进行页面的重新加载或跳转，取而代之的是动态的变换HTML的内容，避免页面的重新加载，这种用户体验是不是很好。所以开发平台前端开发中，默认采用了AMD模块化规范的单页面应用(SPA)。在页面中，采用了iuap Design的[UI控件库](http://design.yyuap.com/dist/pages/neoui/index.html)以及[模型框架库](http://design.yyuap.com/dist/pages/kero/overview.html)分别来做UI层开发和数型层(MVVM)开发。
 
 下面我们聊聊上面所提到的前端页面开发、后端数据交互、AMD模块化、单页面应用以及搭建项目所用到的技术。
 
 ## 前端页面开发
 
-前端页面开发使用了iUAP Design的UI框架以及数据模型框架，iUAP Design 是企业级Web应用开发前端整体解决方案。包含设计语言、前端框架、插件库、组件库、模板库等。
+前端页面开发使用了iuap Design的UI框架以及数据模型框架，iuap Design 是企业级Web应用开发前端整体解决方案。包含设计语言、前端框架、插件库、组件库、模板库等。
 
-平台中使用了iUAP Design中的控件库做为默认控件，同时不限制开发者引用第三方控件库，如做图表开发时，我们会引用echart.js 。
+平台中使用了iuap Design中的控件库做为默认控件，同时不限制开发者引用第三方控件库，如做图表开发时，我们会引用echart.js 。
 
-平台页面中，采用了iUAP Design的模型框架,一种基于knockout.js扩展的MVVM模型做为主开发框架。
+平台页面中，采用了iuap Design的模型框架,一种基于knockout.js扩展的MVVM模型做为主开发框架。
 
 主要优势有：
 - 完善的控件体系：包含所有常见的控件。
@@ -42,7 +42,7 @@
 
 ```
 
-如果要发送数据模型中的相关数据，需要把数据模型中的数据转成JSON发请到服务端，参考iUAP Design中的数据模型相关API用法：
+如果要发送数据模型中的相关数据，需要把数据模型中的数据转成JSON发请到服务端，参考iuap Design中的数据模型相关API用法：
 
 [http://design.yyuap.com/dist/pages/kero/udatatable.html](http://design.yyuap.com/dist/pages/kero/udatatable.html)
 

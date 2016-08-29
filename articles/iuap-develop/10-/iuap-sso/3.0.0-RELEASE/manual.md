@@ -151,8 +151,10 @@ QQ为`com.yonyou.uap.ieop.login.servlet.QQUserInfoServlet`
 
 ### 配置文件 ###
 
-1. **配置对应第三方系统的配置文件**  
-修改qqconnectconfig.properties(此文件需要放在工程的class path路径下)内容。其中：app_ID和app_KEY为支持等三方登录功能的平台申请的ID和KEY，redirect_URI为用户在第三方平台登录授权后回调的URI地址，需要与3.4.1.2中配置的回调servlet对应。
+
+** 1. 配置对应第三方系统的配置文件 **
+
+修改qqconnectconfig.properties(此文件需要放在工程的class path路径下)内容。其中：app_ID和app_KEY为支持等三方登录功能的平台申请的ID和KEY，redirect_URI为用户在第三方平台登录授权后回调的URI地址，需要与回调servlet对应。
 
 ```
 	app_ID = 101248396
@@ -160,7 +162,8 @@ QQ为`com.yonyou.uap.ieop.login.servlet.QQUserInfoServlet`
 	redirect_URI = http://xxxx:8080/xxxx/extlogin/qq  
 ```
 
-2. **指定登录成功后的逻辑处理Service**  
+** 2. 指定登录成功后的逻辑处理Service **
+
 本地创建`com.yonyou.uap.ieop.login.afterlogin.ShiroAfterloginService`类并继承`com.yonyou.uap.ieop.login.afterlogin.IafterloginService`
 或在*LoginConfig.properties*(此文件需要放在工程的class path路径下)中配置为其他处理类
 `AfterLogin.do = com.yonyou.uap.ieop.login.afterlogin.ShiroAfterloginService`

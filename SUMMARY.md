@@ -1,6 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
 * [产品简介](articles/iuap-develop/1-/README.md)
 * [获取指南](articles/iuap-develop/2-/README.md)
    * [下载](articles/iuap-develop/2-/mian_fei_shi_yong.md)
@@ -22,8 +21,6 @@
    * [开发环境搭建](articles/iuap-develop/5-/part1/kai_fa_huan_jing_da_jian.md)
 * [服务端详解](articles/iuap-develop/7-/README.md)
    * [服务端系统框架](articles/iuap-develop/7-/part1/README.md)
-       * [服务端功能架构](articles/iuap-develop/7-/part1/iuapgong_neng_jia_gou.md)
-       * [基于iuap的系统架构](articles/iuap-develop/7-/part1/ji_yu_iuap_de_xi_tong_jia_gou.md)
    * [Spring框架集成](articles/iuap-develop/7-/part2/README.md)
        * [Spring 框架的整合](articles/iuap-develop/7-/part2/spring_kuang_jia_de_zheng_he.md)
        * [Spring MVC集成](articles/iuap-develop/7-/part2/spring_mvcji_cheng.md)

@@ -103,12 +103,6 @@ idtype为需要使用的ID生成类型，目前包括UUID、redis自增、snowfl
 
 注意:建表和初始化sql语句请参考示例工程，最终生成的为20位的字符串，前八位为用户指定的schema名。
 
-以mysql为例，其sql脚本如下：
-
-    CREATE TABLE pub_oid(schemacode VARCHAR(8) NOT NULL,oidbase VARCHAR(20) NOT NULL,id VARCHAR(36) NOT NULL,ts TIMESTAMP NULL,PRIMARY KEY (id))ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-	INSERT INTO pub_oid (schemacode, oidbase, id, ts) VALUES (DATABASE(), '100000000001', uuid(), current_timestamp());
-
 如果是基于iuap-jdbc组件使用id生成，可以在实体类上配置注解(iuap-jdbc的注解)的方式，选择类型，示例如下：
 
 	@Entity

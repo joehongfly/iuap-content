@@ -3,7 +3,6 @@
 iuap 平台默认使用Tomcat JDBC作为数据库连接池。Tomcat JDBC连接池兼容DBCP，使用简单方便，性能更好，支持高并发的应用环境，同时支持 JMX 以及XA Connection。
 
 ## 数据库连接池配置
-
 Tomcat JDBC数据库连接池需要引入maven依赖如下，如果已经引入iuap-persistence组件，tomcat-jdbc会被间接引入，目前使用的版本为7.0.53：
 
     <!-- connection pool 依赖 -->
@@ -75,7 +74,7 @@ Tomcat JDBC数据库连接池需要引入maven依赖如下，如果已经引入i
 	</bean>
 
 
-Druid也是较好的数据库连接池，提供了数据库访问性能的监控、数据库密码加密、SQL执行日志、扩展JDBC等功能，在性能和扩展性方面 也超过DBCP、C3P0等。
+Druid也是较好的数据库连接池，提供了数据库访问的性能监控、数据库密码加密、SQL执行日志以及扩展JDBC等功能，在性能和扩展性方面也较好。
  
 Druid连接池需要引入jar包，如druid-1.0.18.jar，maven方式引入的示例如下：
 
@@ -153,9 +152,7 @@ Druid数据库连接池Spring配置文件：
 
 
 ## 数据库连接池使用
-
 DataSource配置好之后，Spring Data JPA方式、Mybatis、JDBC方式的连接自动从连接池中获取，业务开发时候不需要关心，直接调用即可。
-
  ![](../image/image85.png)
 
 如果使用的是Druid连接池，本身可提供监控界面，需要在web.xml中进行配置，如下：
@@ -203,14 +200,13 @@ Mybatis对应的映射文件编写时候使用的是针对某种数据库的语�
  ![](../image/image89.png)
 
 ### UAP JDBC的适配 ###
-
-（1）数据源配置如下：
+1. 数据源配置如下：
 
     <bean id="crossDBDataSource" class="com.yonyou.iuap.persistence.bs.framework.ds.CrossdbDataSource" lazy-init="false">
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
-（2）配置事务
+2. 配置事务：
 
     <!-- spring 事务配置 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -220,7 +216,7 @@ Mybatis对应的映射文件编写时候使用的是针对某种数据库的语�
     <!-- 使用annotation定义事务 -->
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 
-（3）配置BaseDAO
+3. 配置BaseDAO：
 
     <bean id="baseDAO" class="com.yonyou.iuap.persistence.bs.dao.BaseDAO">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>

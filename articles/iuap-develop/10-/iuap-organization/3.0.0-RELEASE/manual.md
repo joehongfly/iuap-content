@@ -34,9 +34,13 @@ ${iuap.modules.version} 为平台在maven私服上发布的组件的version。
 
 ## 使用方法
 
-1，	配置spring文件，参考示例工程：organization-applicationContext.xml
+1. 	配置spring文件，参考示例工程：organization-applicationContext.xml
 
-2，字段结构如下：
+2. 执行数据库脚本
+
+	依次执行examples项目下sql目录中的dll.sql、index.sql、dml.sql建立数据库并初始化数据
+
+3. 字段结构如下：
 
 #####（1）组织表org_orgs
 
@@ -188,7 +192,6 @@ ${iuap.modules.version} 为平台在maven私服上发布的组件的version。
    </tr>
 </table>
 
-注：基本数据库表见jar包中resource目录下的sql>mysql。
 
 3，服务接口类
 
